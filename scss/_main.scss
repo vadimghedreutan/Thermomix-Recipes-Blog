@@ -108,6 +108,17 @@ main {
 }
 
 .footer {
-  padding: 3rem 0;
+  padding: 3rem 2rem;
   background: white;
+  display: flex;
+  justify-content: space-between;
+
+  img {
+    width: 30%;
+    transition: all 1s;
+
+    &:hover {
+      transform: scale(2);
+    }
+  }
 }

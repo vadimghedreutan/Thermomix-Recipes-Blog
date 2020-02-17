@@ -223,8 +223,15 @@ main {
         display: none; } }
 
 .footer {
-  padding: 3rem 0;
-  background: white; }
+  padding: 3rem 2rem;
+  background: white;
+  display: flex;
+  justify-content: space-between; }
+  .footer img {
+    width: 30%;
+    transition: all 1s; }
+    .footer img:hover {
+      transform: scale(2); }
 
 .color:nth-of-type(4n+1) {
   background-color: #f6e1e1; }
