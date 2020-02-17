@@ -1,0 +1,16 @@
+$primaryColor: #e8ebf6;
+$green: #0afbc8;
+$red: #f35588;
+
+$Colors: #f6e1e1, #bae8e8, #f5afc7, #d6e5fa;
+$ColorsLength: length($Colors);
+
+.color {
+  @for $i from 1 through $ColorsLength {
+    &:nth-of-type(#{$ColorsLength}n+#{$i}) {
+      background-color: nth($Colors, $i);      
+    }
+  }  
+}
+
+

@@ -1,0 +1,104 @@
+@import '_breakpoints.scss';
+@import '_variables.scss';
+
+.header {
+  background: $primaryColor;
+  position: relative;
+}
+
+.main-nav {
+  display: flex;
+  justify-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 0;
+
+  .logo {
+    font-size: 1.6rem;
+    font-family: 'Courgette', cursive;
+    @include media('<=600px') {
+      font-size: 1rem;
+    }
+
+    &:hover {
+      color: $red;
+    }
+
+  }
+  
+  ul {
+    display: flex;
+    align-items: center;
+
+    li {
+      padding: 0 0.625rem;
+    }
+  }
+
+  .main-menu {
+    flex: 1;
+    margin-left: 1rem;
+    @include media('<=tablet') {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: $primaryColor;
+      width: 50%;
+      height: 100vh;
+      border-right: 1px solid #ccc;
+      opacity: 0.9;
+      padding: 1.875rem;
+      z-index: 99;
+      transform: translateX(-500px);
+      transition: transform 0.5s ease-in-out;
+
+      &.show {
+        transform: translateX(-20px);
+      }
+
+      li {
+        padding: 0.625rem;
+        border-bottom: 1px solid #ddd;
+        font-size: 1.2rem;
+
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .right-menu {
+    @include media('<=tablet') {
+      margin-right: 50px;
+    }
+
+    @include media('<=600px') {
+      flex-direction: column;
+      padding-right: 20px;
+      
+      a {
+        font-size: .8rem;
+      }
+    }
+  }
+}
+
+.menu-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  display: none;
+  @include media('<=tablet') {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -99999;
+}
